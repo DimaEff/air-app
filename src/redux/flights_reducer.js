@@ -1,4 +1,4 @@
-export const SET_ASYNC_FLIGHTS = 'flights_reducer/SET_ASYNC_FLIGHTS';
+export const FETCH_FLIGHTS = 'flights_reducer/FETCH_FLIGHTS';
 const SET_FLIGHTS = 'flights_reducer/SET_FLIGHTS';
 
 const initialState = {
@@ -18,7 +18,7 @@ const flightsReducer = (state=initialState, action) => {
     }
 }
 
-export const setAsyncFlights = () => ({type: SET_ASYNC_FLIGHTS});
+export const fetchFlights = () => ({type: FETCH_FLIGHTS});
 export const setFlights = (payload) => ({type: SET_FLIGHTS, payload});
 
 export default flightsReducer;

@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, View} from 'react-native';
+import {useDispatch, Provider, useSelector} from "react-redux";
 
-import {flightAPI} from "./src/api/api";
+import store from './src/redux/store';
+import Flights from "./src/components/flights/Flights";
 
 
 export default function App() {
-  const press = async () => {
-    const res = await flightAPI.getFlights('RU', 'RUB', 'en-US', 'SVO-sky', 'JFK-sky', '2021-07')
-    console.log(res)
-  }
-
   return (
-    <View style={styles.container}>
-      <Button title={'test'} onPress={press}>test</Button>
-    </View>
+      <Provider store={store}>
+        <View>
+          <Flights />
+        </View>
+      </Provider>
   );
 }
 
